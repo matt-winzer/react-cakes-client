@@ -13,7 +13,8 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('/cakes.json')
+    const apiUrl = window.location.search ? window.location.search.slice(1) : '/cakes.json'
+    const response = await fetch(apiUrl)
     const cakes = await response.json()
     this.setState({
       cakes
