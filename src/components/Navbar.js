@@ -10,7 +10,7 @@ class Navbar extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu widths={3}>
+      <Menu widths={3} size={'huge'}>
         <Menu.Item
           name='cakes'
           active={activeItem === 'cakes'}
@@ -19,7 +19,7 @@ class Navbar extends Component {
           Cakes
         </Menu.Item>
 
-        <Menu.Item disabled name='title' active={activeItem === 'title'} onClick={this.handleItemClick}>
+        <Menu.Item color={'red'} name='title' active={activeItem === 'title'} onClick={this.handleItemClick}>
           Cake 4 Dayz
         </Menu.Item>
 

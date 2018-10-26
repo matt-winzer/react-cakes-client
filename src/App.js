@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Grid } from 'semantic-ui-react';
 import './App.css';
 
 // Components
 import Navbar from './components/Navbar'
+import CakeList from './components/CakeList'
 
 class App extends Component {
   state = {
@@ -21,6 +23,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <Grid container className="main-container">
+          <CakeList cakes={this.state.cakes} />
+        </Grid>
       </div>
     );
   }
