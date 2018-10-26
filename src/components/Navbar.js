@@ -2,21 +2,16 @@ import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 
 class Navbar extends Component {
-  state = {
-    activeItem: 'cakes'
-  }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    const { activeItem } = this.state
+    const { activeItem } = this.props
 
     return (
       <Menu widths={2} size={'huge'}>
         <Menu.Item
           name='cakes'
           active={activeItem === 'cakes'}
-          onClick={this.handleItemClick}
+          onClick={this.props.handleItemClick}
         >
           Cakes
         </Menu.Item>
@@ -24,7 +19,7 @@ class Navbar extends Component {
         <Menu.Item
           name='students'
           active={activeItem === 'students'}
-          onClick={this.handleItemClick}
+          onClick={this.props.handleItemClick}
         >
           Students
         </Menu.Item>

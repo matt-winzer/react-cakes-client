@@ -12,8 +12,8 @@ const CakeCard = ({ name, imageUrl, description }) => (
       <Card.Description>{description}</Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <Icon name='user' />
-      22 Friends
+      <Icon name='thumbs up' />
+      22 Votes
     </Card.Content>
   </Card>
 )

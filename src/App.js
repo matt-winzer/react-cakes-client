@@ -9,22 +9,34 @@ import CakeHeader from './components/CakeHeader'
 
 class App extends Component {
   state = {
-    cakes: []
+    cakes: [],
+    students: [],
+    activeItem: 'cakes'
   }
 
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   async componentDidMount() {
-    const apiUrl = window.location.search ? window.location.search.slice(1) : '/cakes.json'
-    const response = await fetch(apiUrl)
-    const cakes = await response.json()
+    const cakeApiUrl = window.location.search ? window.location.search.slice(1) : '/cakes.json'
+    const studentApiUrl = '/students.json'
+
+    const cakeResponse = await fetch(cakeApiUrl)
+    const cakes = await cakeResponse.json()
+    const studentResponse = await fetch(studentApiUrl)
+    const students = await studentResponse.json()
+    
     this.setState({
-      cakes
-    })
+      cakes,
+      students
+    }, () => console.log(this.state))
   }
 
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar activeItem={this.state.activeItem}
+                handleItemClick={this.handleItemClick}
+                />
         <CakeHeader />
         <Grid container className="main-container">
           <CakeList cakes={this.state.cakes} />
