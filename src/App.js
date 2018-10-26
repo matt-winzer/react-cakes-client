@@ -5,6 +5,7 @@ import './App.css';
 // Components
 import Navbar from './components/Navbar'
 import CakeList from './components/CakeList'
+import CakeHeader from './components/CakeHeader'
 
 class App extends Component {
   state = {
@@ -23,6 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <CakeHeader />
         <Grid container className="main-container">
           <CakeList cakes={this.state.cakes} />
         </Grid>

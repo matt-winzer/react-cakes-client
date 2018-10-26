@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Grid } from 'semantic-ui-react'
 
 import CakeCard from './CakeCard'
@@ -13,7 +13,7 @@ const CakeList = ({ cakes }) => {
                       />
   })
 
-  return (
+  return (      
     <div className='cake-container'>
       {cakeCards}
     </div>
