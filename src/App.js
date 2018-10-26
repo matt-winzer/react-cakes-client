@@ -3,6 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    cakes: []
+  }
+
+  async componentDidMount() {
+    const response = await fetch('/cakes.json')
+    const cakes = await response.json()
+    this.setState({
+      cakes
+    })
+  }
+
   render() {
     return (
       <div className="App">
