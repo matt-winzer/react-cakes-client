@@ -1,4 +1,5 @@
-[
+{
+  "students": [
   {
     "id": 1,
     "name": "Ryan Holly",
@@ -64,4 +65,4 @@
     "name": "Son Phan",
     "cohort": "g99"
   }
-]
+]}
